@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:ssr": "ng build --configuration production && ng run enpoppa:server:production",
     "serve:ssr": "node dist/en-poppa/server/main.js",
     "prerender": "ng run enpoppa:prerender",
     "serve:ssr:enpoppa": "node dist/en-poppa/server/main.js"
