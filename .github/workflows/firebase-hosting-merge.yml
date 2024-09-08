@@ -13,13 +13,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build SSR
-        run: npm run build:ssr # Este es el paso crítico que falta
+        run: npm run build:ssr # Agregar este paso para construir la aplicación SSR
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ENPOPPA2024 }}
-          channelId: live
           projectId: enpoppa2024
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
