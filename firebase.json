@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "source": ".",
+    "source": "./dist/en-poppa/server",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,7 +8,14 @@
     ],
     "frameworksBackend": {
       "region": "us-central1"
-    }
+    },
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+
   }
 }
 
