@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting on merge
+name: Deploy to Firebase Preview Channel on merge
 
 on:
   push:
@@ -12,11 +12,15 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: Deploy to Firebase Hosting
+      - name: Build SSR
+        run: npm run build:ssr
+      - name: Deploy to Firebase Preview Channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ENPOPPA2024 }}
           projectId: enpoppa2024
+          channelId: preview # Puedes cambiar "preview" por cualquier nombre de canal
+          expires: 7d # Opcional, la duración de validez del canal
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
