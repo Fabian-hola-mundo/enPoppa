@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "source": "./dist/en-poppa",
+    "public": "dist/en-poppa/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,11 +12,9 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+          "function": "ssr"
       }
     ]
 
   }
 }
-
-
