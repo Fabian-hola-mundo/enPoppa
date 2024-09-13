@@ -1,0 +1,19 @@
+<section>
+  <div class="title">
+    <h6>TODO LO QUE PUEDAS IMAGINAR, LO PODEMOS MATERIALIZAR.</h6>
+  </div>
+  <div class="story">
+    <div class="story__item" *ngFor="let story of storys">
+      <span class="story__item--span">
+        <h5>{{story.number}}</h5>
+        <span class="more">+</span>
+        <p>{{story.string}}</p>
+      </span>
+    </div>
+  </div>
+  <div class="logos">
+    <div *ngFor="let logo of logos">
+      <img [src]="logo" alt="Logo">
+    </div>
+  </div>
+</section>

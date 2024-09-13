@@ -1,0 +1,49 @@
+@import '../../../../../../../styles.scss';
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  & div {
+    & .hamburger__image {
+      @extend .primary;
+      padding: 24px;
+      & img {
+        max-width: 120px;
+      }
+    }
+  }
+}
+
+/* Movimientos aleatorios */
+
+@keyframes planet {
+  0% {
+    transform: translate(0, -70px);
+  }
+  50% {
+    transform: translate(calc(random() * 1vw), calc(random() * -70px));;
+  }
+  100% {
+    transform: translate(0, -70px);
+  }
+}
+
+
+:host {
+  ::ng-deep {
+    & .mat-list-item-content {
+      gap: 8px;
+    }
+
+    .mat-mdc-dialog-surface, .mdc-dialog__surface {
+      border-radius: 28px !important;
+    }
+
+    .mat-mdc-list-item-unscoped-content {
+      display: flex !important;
+      gap: 8px !important;
+    }
+  }
+}

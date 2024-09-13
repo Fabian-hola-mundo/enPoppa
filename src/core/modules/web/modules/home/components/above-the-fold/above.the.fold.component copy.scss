@@ -1,0 +1,63 @@
+@import '../../../../../../../styles.scss';
+
+$background : linear-gradient(90deg, rgba(6,18,50,1) 0%, rgba(72,93,146,0) 100%);
+
+:host {
+  height: 90dvh;
+  width: 100%;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/enpoppa2024.appspot.com/o/background.jpg?alt=media&token=b9ec8bc7-357c-4187-9321-9072b2d796b7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  & .absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $background;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+  & main {
+    width: 100%;
+    height: 100%;
+    & section {
+      max-width: var(--max-width);
+      @extend %fullPadding;
+      padding-top: 72px * 2 !important;
+      height: 100%;
+      display: flex;
+      gap: 48px;
+      z-index: 2;
+      flex-direction: column;
+      justify-content: center;
+      & .image-logo {
+        max-width: 240px;
+        width: 100%;
+      }
+      & .text  {
+        @extend .on-primary-text;
+        text-transform: uppercase;
+        font-size: 3rem;
+        font-weight: 300 !important;
+        line-height: 5rem;
+        display: inline;
+        overflow-wrap: break-word; /* Corta palabras largas si es necesario */
+        white-space: normal; /* Evita que el texto se desborde en una sola línea */
+        & span {
+          font-size: 7rem;
+          font-weight: 700 !important;
+        }
+      }
+      @media (max-width: 1007px) {
+        & .text {
+          font-size: 1.5rem !important;
+          line-height: 2rem;
+          & span {
+            font-size: 3rem !important;
+          }
+        }
+      }
+    }
+  }
+}

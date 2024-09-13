@@ -1,0 +1,27 @@
+@import url('../../../../../../styles.scss');
+
+:host {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 72px;
+
+
+
+  & pop-us {
+
+  }
+
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}

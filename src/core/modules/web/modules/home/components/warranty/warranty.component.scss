@@ -1,0 +1,45 @@
+@import '../../../../../../../styles.scss';
+
+:host {
+  @extend %fullPadding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E2E2E2;
+  & section {
+    max-width: var(--max-width);
+    display: flex;
+    width: 100%;
+    & .items-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      & > div {
+        @extend %showAppear;
+      }
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        & mat-icon {
+          $size: 48px;
+          font-size: $size;
+          width: $size;
+          height: $size;
+          @extend .primary-text;
+        }
+        & h5 {
+          color: var(--md-ref-palette-neutral-variant30);
+        }
+      }
+      @media (max-width: 1007px) {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        padding-block: 48px;
+      }
+    }
+  }
+}

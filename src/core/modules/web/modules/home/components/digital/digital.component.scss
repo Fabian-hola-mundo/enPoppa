@@ -1,0 +1,12 @@
+@import '../../../../../../../styles.scss';
+
+:host {
+  @extend %fullPadding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & section {
+    max-width: var(--max-width);
+    display: flex;
+  }
+}
