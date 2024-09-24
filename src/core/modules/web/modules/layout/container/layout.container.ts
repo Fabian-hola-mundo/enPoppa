@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from "../../nav/container/nav.container";
 import { DownBarComponent } from '../../nav/components/down-bar/down.bar.component';
+import { FooterComponent } from "../../nav/components/footer/footer.component";
 
 @Component({
   selector: 'pop-lay',
@@ -12,12 +13,14 @@ import { DownBarComponent } from '../../nav/components/down-bar/down.bar.compone
     RouterModule,
     MatIconModule,
     NavComponent,
-    DownBarComponent
+    DownBarComponent,
+    FooterComponent
 ],
   template: `
   <pop-nav/>
   <router-outlet></router-outlet>
   <pop-down-bar></pop-down-bar>
+  <pop-footer></pop-footer>
   `,
 })
 export class LayoutComponent {

@@ -1,2 +1,14 @@
 <section>
+  <div class="title">
+    <h3 class="title__h3">
+      PORTAFOLIO
+      <span class="title__h3--second">Increíble</span>
+      <span class="title__h3--thirth"> y selecciona nuestro trabajo</span>
+    </h3>
+  </div>
+  <div class="images">
+    <div *ngFor="let image of portfolioImages" class="images__container">
+      <img [src]="image" alt="" />
+    </div>
+  </div>
 </section>

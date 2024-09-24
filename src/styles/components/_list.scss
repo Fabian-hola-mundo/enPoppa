@@ -1,0 +1,11 @@
+::ng-deep {
+  .mdc-list-item {
+    &__primary-text {
+      @extend .primary-text;
+    }
+    &__on-primary-text {
+      @extend .on-primary-text;
+    }
+  }
+
+}

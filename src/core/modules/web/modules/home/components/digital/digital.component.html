@@ -1,2 +1,24 @@
 <section>
+  <div class="title">
+    <h3 class="title__h3">
+      gestión
+      <span class="title__h3--second">digital</span>
+    </h3>
+    <p>
+      En una época en la que los medios digitales y las redes sociales son
+      protagonistas en la vida de los seres humanos, nos permitimos presentar
+      nuestra propuesta de diseño de página web y administración de redes
+      sociales con lo cual usted podrá tener una exposición de marca importante
+      y seguramente un impacto positivo en sus resultados comerciales y
+      organizacionales.
+    </p>
+  </div>
+  <div class="images">
+    <div *ngFor="let image of images" class="images__container">
+      <img [src]="image" alt="" />
+    </div>
+  </div>
+  <div class="button">
+    <button mat-stroked-button>Sorpréndete</button>
+  </div>
 </section>

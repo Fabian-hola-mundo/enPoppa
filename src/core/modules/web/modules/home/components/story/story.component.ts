@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'pop-story',
@@ -9,6 +9,7 @@ import { Component} from '@angular/core';
   templateUrl: './story.component.html'
 })
 export class StoryComponent{
+  @ViewChild('carousel') carousel!: ElementRef;
   logoinit = 'https://firebasestorage.googleapis.com/v0/b/'
   logos = [
     'https://firebasestorage.googleapis.com/v0/b/enpoppa2024.appspot.com/o/logos%2FGroup-1-min.png?alt=media&token=f197617f-576b-4d38-a9aa-e75e7f6a55c5',

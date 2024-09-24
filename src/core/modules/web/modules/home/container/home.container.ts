@@ -5,6 +5,7 @@ import { StoryComponent } from '../components/story/story.component';
 import { CtaComponent } from '../components/cta/cta.component';
 import { PortfolioComponent } from '../components/portfolio/portfolio.component';
 import { WarrantyComponent } from '../components/warranty/warranty.component';
+import { DigitalComponent } from "../components/digital/digital.component";
 
 @Component({
   selector: 'pop-home',
@@ -17,7 +18,8 @@ import { WarrantyComponent } from '../components/warranty/warranty.component';
     CtaComponent,
     PortfolioComponent,
     WarrantyComponent,
-  ],
+    DigitalComponent
+],
   template: `
     <pop-above-the-fold />
     <pop-us />
@@ -26,6 +28,7 @@ import { WarrantyComponent } from '../components/warranty/warranty.component';
       <pop-warranty />
       <pop-cta />
     </div>
+    <pop-digital/>
     <pop-portfolio />
   `,
 })

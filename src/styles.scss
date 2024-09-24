@@ -19,7 +19,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  @extend .background;
+  background-color: var(--md-sys-color-background) !important;
 }
 
 h1,
@@ -73,4 +73,31 @@ h6 {
 
 .fill-svg {
   @extend .primary-fill;
+}
+
+%fistTitle {
+  color: #0083c9;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+%secondTitle {
+  color: #002561;
+  font-size: 59.705px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 85%;
+  text-align: center;
+}
+
+%thirthTitle {
+  color: #002561;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  text-align: center;
 }
