@@ -1,9 +1,14 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+import { dataDefaultPage } from '../../../default_page/constants/dataDefaultPage';
+import { whatsApplink } from '../../../../constants/whatsAppLink';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'pop-hamburger',
@@ -11,26 +16,26 @@ import {MatListModule} from '@angular/material/list';
   template: `
     <nav class="hamburger">
       <div>
-        <div class="hamburger__image" mat-dialog-close routerLink="/">
+        <div class="hamburger__image" mat-dialog-close routerLink="/home">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/enpoppa2024.appspot.com/o/enpoppaLogo-min.png?alt=media&token=4697fa73-68bc-4ba9-ae12-c7ea3b582409"
             alt="Logo de opietch"
           />
         </div>
         <mat-divider> </mat-divider>
-        <mat-nav-list class="hamburger__menu">
-   <!--        <mat-list-item routerLink="/" mat-dialog-close (click)="closeDialog()"
-            ><mat-icon color="primary">home</mat-icon> Home</mat-list-item
-          >
-          <mat-list-item mat-dialog-close
-            ><mat-icon color="primary"> integration_instructions </mat-icon
-            >Portafolio</mat-list-item
-          > -->
-          <mat-list-item mat-dialog-close (click)="onClickOpenContact()"
-            ><mat-icon color="primary"> call</mat-icon>Háblanos de tus
-            ideas</mat-list-item
-          >
-        </mat-nav-list>
+        <ul class="hamburguer__items">
+          <li *ngFor="let page of allpages">
+            <button
+              mat-button
+              color="primary"
+              [routerLink]="[ 'home/' + page.slug +'/']" routerLinkActive="router-link-active"
+              class="contact"
+              mat-dialog-close
+            >
+              {{page.label}}
+            </button>
+          </li>
+        </ul>
       </div>
       <div class="hamburger__footer">
         <div class="hamburger__footer--container">
@@ -42,12 +47,16 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     MatDividerModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule,
+    MatDialogModule,
+    RouterModule,
+    MatButtonModule
   ]
 })
 export class NavDialogComponent {
-  whatsApplink: string = '//wa.me/573187349299';
-
+  whatsApplink: string = whatsApplink;
+  allpages = dataDefaultPage
   constructor(
     public dialogRef: MatDialogRef<NavDialogComponent>,
     public _bottomSheet: MatBottomSheet

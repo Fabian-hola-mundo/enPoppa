@@ -55,17 +55,24 @@
         }
       }
     }
-
-    @media (max-width: 1007px) {
-      & .story {
-        flex-direction: column;
-      }
-    }
     & .logos {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       justify-content: center;
+
+    }
+    @media (max-width: 1007px) {
+      & .story {
+        flex-direction: column;
+      }
+      & .logos {
+        & div {
+          & img {
+            max-width: 140px;
+          }
+        }
+      }
     }
   }
 }

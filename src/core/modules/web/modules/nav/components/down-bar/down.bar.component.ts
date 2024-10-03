@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { whatsApplink } from '../../../../constants/whatsAppLink';
 
 @Component({
   selector: 'pop-down-bar',
@@ -24,7 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [MatIconModule, CommonModule, MatButtonModule],
 })
 export class DownBarComponent {
-  whatsApplink: string = '//wa.me/573187349299';
+  whatsApplink: string = whatsApplink;
   lastScrollPosition = 0;
   isScrollingUp = true;
   onClickOpenContact() {

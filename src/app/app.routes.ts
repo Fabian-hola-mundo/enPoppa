@@ -8,5 +8,6 @@ export const routes: Route[] = [
       import('../core/modules/web/routes/lib.routes').then((m) => m.webLayOutRoute),
     title: 'En Popa',
   },
+  /* { path: '', redirectTo: 'home', pathMatch: 'full' }, */
   { path: '', pathMatch: 'full', component: MantenimientoComponent },
 ];

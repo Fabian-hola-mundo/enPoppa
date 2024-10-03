@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { whatsApplink } from '../../../../constants/whatsAppLink';
 
 @Component({
   selector: 'app-mantenimiento',
@@ -9,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './mantenimiento.component.scss'
 })
 export class MantenimientoComponent {
-  whatsApplink: string = '//wa.me/573187349299';
+  whatsApplink: string = whatsApplink;
 
   contact() {
     window.open( this.whatsApplink, '_blank')

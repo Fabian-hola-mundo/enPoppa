@@ -15,11 +15,11 @@ export const webLayOutRoute: Route[] = [
         pathMatch: 'full',
       },
       { path: '', redirectTo: '', pathMatch: 'full' },
-      {
-        path: 'test',
-        component: DefaultPageComponent,
-        pathMatch: 'full',
-      },
+        {
+          path: ':slug',
+          component: DefaultPageComponent,
+          pathMatch: 'full',
+        },
     ],
   },
 ];

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { whatsApplink } from '../../../../constants/whatsAppLink';
 
 @Component({
   selector: 'pop-cta',
@@ -11,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './cta.component.html'
 })
 export class CtaComponent{
-  whatsApplink: string = '//wa.me/573187349299';
+  whatsApplink = whatsApplink;
   contact() {
     window.open( this.whatsApplink, '_blank')
   }

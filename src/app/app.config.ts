@@ -25,6 +25,7 @@ export const appConfig: ApplicationConfig = {
         apiKey: 'AIzaSyATLq70FvDXcNuEcw8j0A4it-sOYygRR0U',
         authDomain: 'enpoppa2024.firebaseapp.com',
         messagingSenderId: '606636089590',
+        measurementId: "G-Q25GZM622N"
       })
     ),
     provideAnalytics(() => getAnalytics()),

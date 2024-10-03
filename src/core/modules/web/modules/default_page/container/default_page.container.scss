@@ -1,0 +1,84 @@
+@import '../../../../../../styles.scss';
+
+:host {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 72px;
+  align-items: center;
+  padding-top: 172px;
+  & section {
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    @extend %fullPadding;
+    & h1 {
+      color: #002561;
+      font-size: 59.705px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 85%;
+      text-align: center;
+      transition: all 700ms;
+    }
+    @media (max-width: 1007px) {
+      & h1 {
+        font-size: 3rem;
+        width: 100%;
+      }
+    }
+    & .container {
+      display: flex;
+      box-shadow: 0px 12px 8px rgba(0, 0, 0, 0.12);
+      border-radius: 12px;
+      width: 100%;
+      min-height: 40dvh;
+      overflow: hidden;
+      background-color: white;
+      & img {
+        flex: 1;
+        width: 50%;
+        object-fit: cover;
+        max-height: 500px;
+      }
+      &__content {
+        justify-content: center;
+        gap: 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 24px;
+        & p {
+          font-size: 18px;
+        }
+        & ul {
+          list-style-type: disc;
+          list-style-position: inside;
+          & li {
+          }
+        }
+        & button {
+          width: fit-content;
+        }
+        & div {
+          display: flex;
+          gap: 4px;
+        }
+      }
+      @media (max-width: 1007px) {
+        flex-direction: column;
+        & img {
+          width: 100%;
+          order: 2;
+        }
+        &__content {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

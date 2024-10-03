@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
+import { whatsApplink } from '../../../../constants/whatsAppLink';
 
 @Component({
   selector: 'pop-above-the-fold',
@@ -14,5 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class AboveTheFoldComponent {
 
-
+  contact() {
+    window.open(whatsApplink, '_blank');
+  }
 }

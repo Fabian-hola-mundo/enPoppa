@@ -45,8 +45,15 @@ $background : linear-gradient(90deg, rgba(6,18,50,1) 0%, rgba(72,93,146,0) 100%)
         overflow-wrap: break-word; /* Corta palabras largas si es necesario */
         white-space: normal; /* Evita que el texto se desborde en una sola línea */
         & span {
-          font-size: 7rem;
+          font-size: 5rem;
           font-weight: 700 !important;
+        }
+      }
+      ::ng-deep {
+        .cta {
+          background-color: var(--md-sys-color-on-primary) !important;
+          color: var(--md-sys-color-primary) !important;
+          width: fit-content;
         }
       }
       @media (max-width: 1007px) {
