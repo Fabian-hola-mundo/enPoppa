@@ -27,8 +27,11 @@ export class FooterComponent {
     window.open(this.whatsApplink, '_blank');
   }
 
-  rrss() {
+  rrssF() {
     window.open('https://www.facebook.com/Enpopa.co', '_blank');
+  }
+  rrssI() {
+    window.open('https://www.instagram.com/enpopapublicidad/', '_blank');
   }
 
   mailTo() {

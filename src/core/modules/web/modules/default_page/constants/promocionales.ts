@@ -1,6 +1,7 @@
 import { whatsApplink } from '../../../constants/whatsAppLink';
 
 const portfolio = 'https://firebasestorage.googleapis.com/v0/b/enpoppa2024.appspot.com/o/portfolio%2FRECONOCIMIENTOS%20IMPORTADOS%202024_compressed.pdf?alt=media&token=f5f17ca2-ab21-496a-9ba0-b2e3a8a5ee30'
+const marpicoPromocionales = 'https://enpopa.marpicopromocionales.com/'
 
 export const promocionales = {
   title: 'Promocionales - Regalos corporativos',
@@ -25,7 +26,7 @@ export const promocionales = {
     {
       label: 'Conoce algunas opciones',
       action: () => {
-        window.open(portfolio, '_blank');
+        window.open(marpicoPromocionales, '_blank');
       },
     },
     {

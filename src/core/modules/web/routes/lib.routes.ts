@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { LayoutComponent } from '../modules/layout/container/layout.container';
 import { HomeComponent } from '../modules/home/container/home.container';
 import { DefaultPageComponent } from '../modules/default_page/container/default_page.container';
+import { MantenimientoComponent } from '../modules/mantenimiento/components/mantenimiento/mantenimiento.component';
 
 export const webLayOutRoute: Route[] = [
   {

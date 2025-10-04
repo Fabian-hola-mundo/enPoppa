@@ -2,7 +2,12 @@ import { Component, HostListener } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterModule,
+} from '@angular/router';
 import { NavDialogComponent } from '../components/nav-dialog/nav.dialog.component';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs';
@@ -16,24 +21,40 @@ import { whatsApplink } from '../../../constants/whatsAppLink';
   template: `
     <nav
       class="nav"
-      [ngClass]="{ 'hide-nav': !isScrollingUp, 'down-nav': isScrolledHalfway, 'landing-mode': !slug}"
+      [ngClass]="{
+        'hide-nav': !isScrollingUp,
+        'down-nav': isScrolledHalfway,
+        'landing-mode': !slug
+      }"
     >
       <div class="nav__container">
         <img
-          routerLink="/home"
+          routerLink="/"
           class="nav__container--img"
           src="../../../../../../assets/logo.svg"
           alt="Logo En Poppa"
         />
         <ul class="nav__container--actions">
+          <li class="button-home"
+          routerLinkActive="none">
+            <button
+              mat-icon-button
+              class="home"
+              color="primary"
+              [routerLink]="['/']"
+            >
+              <mat-icon class="home">home</mat-icon>
+            </button>
+          </li>
           <li *ngFor="let item of allpages">
             <button
               mat-button
               color="primary"
-              [routerLink]="[ item.slug +'/']" routerLinkActive="router-link-active"
+              [routerLink]="[item.slug + '/']"
+              routerLinkActive="router-link-active"
               class="contact"
             >
-              {{item.label}}
+              {{ item.label }}
             </button>
           </li>
           <li>
@@ -54,19 +75,18 @@ import { whatsApplink } from '../../../constants/whatsAppLink';
   imports: [CommonModule, MatButtonModule, MatIconModule, RouterModule],
 })
 export class NavComponent {
-  allpages = dataDefaultPage
+  allpages = dataDefaultPage;
   slug: string = '';
   whatsApplink: string = whatsApplink;
   lastScrollPosition = 0;
-  isScrolledHalfway: boolean = false;
   isScrollingUp = true;
+  isScrolledHalfway: boolean = false;
   constructor(
     public dialog: MatDialog,
     public route: ActivatedRoute,
     public dialogRrss: MatDialog,
     private router: Router
-  ) {
-  }
+  ) {}
   openDialog() {
     const dc = new MatDialogConfig();
     dc.autoFocus = true;
@@ -81,7 +101,7 @@ export class NavComponent {
   ngOnInit(): void {
     // Escuchar eventos de navegación para actualizar el slug
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         this.updateSlug();
         window.scrollTo(0, 1);
@@ -101,7 +121,7 @@ export class NavComponent {
       currentRoute = currentRoute.firstChild;
     }
 
-    currentRoute.paramMap.subscribe(params => {
+    currentRoute.paramMap.subscribe((params) => {
       this.slug = params.get('slug') || '';
     });
   }
@@ -120,6 +140,8 @@ export class NavComponent {
     const currentScrollPosition = window.pageYOffset;
     this.isScrollingUp = currentScrollPosition < this.lastScrollPosition;
     this.lastScrollPosition = currentScrollPosition;
+    console.log(this.isScrollingUp);
+
     const scrollPosition =
       window.pageYOffset ||
       document.documentElement.scrollTop ||

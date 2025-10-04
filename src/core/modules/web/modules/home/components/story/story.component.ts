@@ -24,20 +24,16 @@ export class StoryComponent{
 
   storys = [
     {
-      number: 84,
+      number: 10,
       string: 'Años'
     },
     {
-      number: 84,
-      string: 'Premios'
-    },
-    {
-      number: 212,
+      number: 15.000,
       string: 'Proyectos'
     },
     {
-      number: 178,
-      string: 'Clientes'
+      number: 900,
+      string: 'Clientes satisfechos'
     },
   ]
 

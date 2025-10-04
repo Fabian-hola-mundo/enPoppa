@@ -3,11 +3,11 @@ import { MantenimientoComponent } from '../core/modules/web/modules/mantenimient
 
 export const routes: Route[] = [
   {
-    path: 'home',
+    path: 'eliminar',
     loadChildren: () =>
       import('../core/modules/web/routes/lib.routes').then((m) => m.webLayOutRoute),
     title: 'En Popa',
   },
-  /* { path: '', redirectTo: 'home', pathMatch: 'full' }, */
-  { path: '', pathMatch: 'full', component: MantenimientoComponent },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  /* { path: '', pathMatch: 'full', component: MantenimientoComponent }, */
 ];
